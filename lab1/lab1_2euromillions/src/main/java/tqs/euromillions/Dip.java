@@ -1,7 +1,7 @@
 package tqs.euromillions;
 
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
+//import java.security.NoSuchAlgorithmException;
+//import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -32,7 +32,7 @@ public class Dip {
         this();
 
 
-       if( ! Arrays.stream(arrayOfNumbers).allMatch( nr -> nr >= 1 && nr <= NUMBERS_RANGE_MAX) ){
+        if( ! Arrays.stream(arrayOfNumbers).allMatch( nr -> nr >= 1 && nr <= NUMBERS_RANGE_MAX) ){
             throw new IllegalArgumentException("numbers set are outside the expected range!");
         }
 

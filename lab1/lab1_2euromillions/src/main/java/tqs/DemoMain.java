@@ -30,7 +30,7 @@ public class DemoMain {
         //report results
         log.info("You scored (matches): ");
         for (Dip dip : draw.findMatchesFor(myBet)) {
-           log.info( dip.format());
+            log.info( dip.format());
         }
     }
 }
