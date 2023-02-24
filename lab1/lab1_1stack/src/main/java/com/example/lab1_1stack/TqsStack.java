@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class TqsStack<T> {
 
-    private final LinkedList<T> list = new LinkedList<>();
+    private LinkedList<T> list = new LinkedList<>();
 
     public T pop(){
         return list.pop();
@@ -15,8 +15,8 @@ public class TqsStack<T> {
     public T peek(){
         return list.getFirst();
     }
-    public void push(T element){
-        list.push(element);
+    public void push(T t){
+        list.push(t);
     }
     public boolean isEmpty(){
         return list.isEmpty();
