@@ -14,10 +14,10 @@ public class Stock {
         return quantity;
     }
     void setLabel(String s){
-        label=s;
+        this.label=s;
     }
     void setQuantity(Integer i){
-        quantity=i;
+        this.quantity=i;
     }
 }
 

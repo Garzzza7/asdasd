@@ -24,13 +24,16 @@ class Lab21stockApplicationTests {
 
 	@Test
 	void getTotalValueAnnot(){
+
 		when(market.lookUpPrice("EBAY")).thenReturn(4.0);
 		when(market.lookUpPrice("MSFT")).thenReturn(1.5);
 		//when(market.lookUpPrice("NOTUSED")).thenReturn(1.5);
-		portfolio.addStock(new Stock("EBAY",1));
-		portfolio.addStock(new Stock("MSFT",1));
-		assertEquals(portfolio.getTotalValue(),5.5);
+		portfolio.addStock(new Stock("EBAY",2));
+		portfolio.addStock(new Stock("MSFT",4));
+		double total=portfolio.getTotalValue();
+		assertEquals(14.0,total);
 		//verify(portfolio.getTotalValue());
+		verify(market,times(2)).lookUpPrice(anyString());
 
 	}
 
