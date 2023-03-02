@@ -21,6 +21,8 @@ import java.util.Formatter;
 import java.util.Locale;
 import java.util.Optional;
 
+import static org.hamcrest.Matchers.empty;
+
 
 /**
  * calls external api to perform the reverse geocoding
@@ -39,7 +41,7 @@ public class AddressResolver {
     }
 
 
-    public Optional<Address> findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
+    public Address findAddressForLocation(double latitude, double longitude) throws URISyntaxException, IOException, ParseException, org.json.simple.parser.ParseException {
 
         String apiKey = ConfigUtils.getPropertyFromConfig("mapquest_key");
 
@@ -55,13 +57,13 @@ public class AddressResolver {
         JSONObject obj = (JSONObject) new JSONParser().parse(apiResponse);
 
         if(  (Long)((JSONObject)obj.get("info") ).get("statuscode")  !=  API_SUCCESS) {
-            return Optional.empty();
+            return (Address) empty();
         }else {
             // get the first element of the results array
             obj = (JSONObject) ((JSONArray) obj.get("results")).get(0);
 
             if (((JSONArray) obj.get("locations")).isEmpty()) {
-                return Optional.empty();
+                return (Address) empty();
             } else {
                 JSONObject address = (JSONObject) ((JSONArray) obj.get("locations")).get(0);
 
@@ -69,7 +71,7 @@ public class AddressResolver {
                 String city = (String) address.get("adminArea5");
                 String state = (String) address.get("adminArea3");
                 String zip = (String) address.get("postalCode");
-                return Optional.of(new Address(road, city, state, zip, null));
+                return (new Address(road, city, state, zip, null));
             }
         }
     }
