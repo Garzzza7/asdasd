@@ -35,10 +35,10 @@ public class Car {
     public String getMaker(){
         return maker;
     }
-    public String getMode(){
+    public String getModel(){
         return model;
     }
-    public void setCarid(Long id){
+    public void setCarId(Long id){
         this.carid=id;
     }
     public void setMaker(String s){
