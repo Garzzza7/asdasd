@@ -18,6 +18,7 @@ public class CarRepositoryTest {
     private TestEntityManager entityManager;
     @Autowired
     private CarRepository carRepository;
+
     @Test
     public void testCarValidId() {
         Car tesla3 = new Car("Tesla", "Model 3");
