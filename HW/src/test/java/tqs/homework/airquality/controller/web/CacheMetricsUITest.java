@@ -53,42 +53,10 @@ public class CacheMetricsUITest {
         System.setProperty("webdriver.edge.driver", "src/main/resources/msedgedriver.exe");
         driver = new EdgeDriver();
     }
-    WebDriver drover;
-
-
-    @Test
-    void test(){
-        /*
-        System.setProperty("webdriver.chrome.driver", "src\\test\\chromedriver.exe");
-        drover = new ChromeDriver();
-        drover.manage().window().maximize();
-         */
-        // System Property for Chrome Driver
-        System.setProperty("webdriver.edge.driver", "src/main/resources/msedgedriver.exe");
-        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
-
-        // Instantiate a ChromeDriver class.
-        WebDriver driver=new EdgeDriver();
-
-        // Launch Website
-        driver.navigate().to("http://www.javatpoint.com/");
-
-        //Maximize the browser
-        driver.manage().window().maximize();
-    }
-
     @AfterEach
     public void tearDown() {
         driver.quit();
     }
-    @Test
-    public void chromeSession(ChromeDriver driver) {
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\piotr\\Desktop\\sele\\chromedriver.exe");
-        WebDriver wd =new ChromeDriver();
-        String baseUrl = "https://www.google.com";
-        wd.get(baseUrl);
-    }
-
     @Test
     public void showCacheMetrics() {
         driver.get("http://localhost:3000");
@@ -100,23 +68,13 @@ public class CacheMetricsUITest {
         driver.findElement(By.linkText("Cache")).click();
         {
             WebDriverWait wait = new WebDriverWait(driver, 5);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h1")));
         }
-//        assertThat(driver.findElement(By.cssSelector(".mt-md-0 b")).getText(), is("Total Hits"));
-//        assertThat(driver.findElement(By.cssSelector(".mt-lg-0 b")).getText(), is("Total Misses"));
-//        assertThat(driver.findElement(By.cssSelector(".col-lg-12 b")).getText(), is("Total Requests"));
+        assertThat(driver.findElement(By.cssSelector(".mt-md-0 b")).getText(), is("Total Hits"));
+        assertThat(driver.findElement(By.cssSelector(".mt-lg-0 b")).getText(), is("Total Misses"));
+        assertThat(driver.findElement(By.cssSelector(".col-lg-12 b")).getText(), is("Total Requests"));
         driver.findElement(By.linkText("HW")).click();
-        {
-            WebDriverWait wait = new WebDriverWait(driver, 5);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
-        }
-        driver.findElement(By.cssSelector(".col-lg-4:nth-child(3) a")).click();
         driver.findElement(By.linkText("Cache")).click();
-        {
-            WebDriverWait wait = new WebDriverWait(driver, 5);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")
-            ));
-        }
         assertThat(driver.findElement(By.cssSelector(".mt-md-0 b")).getText(), is("Total Hits"));
         assertThat(driver.findElement(By.cssSelector(".mt-lg-0 b")).getText(), is("Total Misses"));
         assertThat(driver.findElement(By.cssSelector(".col-lg-12 b")).getText(), is("Total Requests"));
