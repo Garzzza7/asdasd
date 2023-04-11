@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class CSVReader {
     private static final Logger logger = Logger.getLogger(CSVReader.class.getName());
     public List<City> readFIle() {
-        String csvFile = "C:\\Users\\piotr\\IdeaProjects\\TQS_116634TENTOTO\\HW\\cities_all.csv";
+        String csvFile = "/home/pc/IdeaProjects/TQS_116634TENOTWIERAJ/HW/cities_all.csv";
         String line = "";
         String cvsSplitBy = ",";
         List<City> cities = new ArrayList<>();
