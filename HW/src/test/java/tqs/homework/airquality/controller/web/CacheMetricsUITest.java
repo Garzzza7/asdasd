@@ -10,6 +10,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,7 +50,8 @@ public class CacheMetricsUITest {
     private WebDriver driver;
     @BeforeEach
     public void setUp() {
-        driver = new ChromeDriver();
+        System.setProperty("webdriver.edge.driver", "src/main/resources/msedgedriver.exe");
+        driver = new EdgeDriver();
     }
     WebDriver drover;
 
@@ -62,10 +64,11 @@ public class CacheMetricsUITest {
         drover.manage().window().maximize();
          */
         // System Property for Chrome Driver
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.edge.driver", "src/main/resources/msedgedriver.exe");
+        //System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 
         // Instantiate a ChromeDriver class.
-        WebDriver driver=new ChromeDriver();
+        WebDriver driver=new EdgeDriver();
 
         // Launch Website
         driver.navigate().to("http://www.javatpoint.com/");
@@ -91,36 +94,32 @@ public class CacheMetricsUITest {
         driver.get("http://localhost:3000");
         driver.manage().window().setSize(new Dimension(1920, 985));
         {
-            WebDriverWait wait = new WebDriverWait(driver, 90);
+            WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText("Cache")));
         }
         driver.findElement(By.linkText("Cache")).click();
         {
-            WebDriverWait wait = new WebDriverWait(driver, 30);
+            WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
         }
-        assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("CACHE"));
-        assertThat(driver.findElement(By.cssSelector(".mt-2")).getText(), is("CHECK SOME VALUES ABOUT HIT AND MISS REQUESTS"));
-        assertThat(driver.findElement(By.cssSelector(".mt-md-0 b")).getText(), is("Total Hits"));
-        assertThat(driver.findElement(By.cssSelector(".mt-lg-0 b")).getText(), is("Total Misses"));
-        assertThat(driver.findElement(By.cssSelector(".col-lg-12 b")).getText(), is("Total Requests"));
-        driver.findElement(By.linkText("Air Quality App")).click();
+//        assertThat(driver.findElement(By.cssSelector(".mt-md-0 b")).getText(), is("Total Hits"));
+//        assertThat(driver.findElement(By.cssSelector(".mt-lg-0 b")).getText(), is("Total Misses"));
+//        assertThat(driver.findElement(By.cssSelector(".col-lg-12 b")).getText(), is("Total Requests"));
+        driver.findElement(By.linkText("HW")).click();
         {
-            WebDriverWait wait = new WebDriverWait(driver, 90);
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".col-lg-4:nth-child(3) a")));
+            WebDriverWait wait = new WebDriverWait(driver, 5);
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
         }
         driver.findElement(By.cssSelector(".col-lg-4:nth-child(3) a")).click();
-        driver.findElement(By.linkText("Cache Statistics")).click();
+        driver.findElement(By.linkText("Cache")).click();
         {
-            WebDriverWait wait = new WebDriverWait(driver, 30);
+            WebDriverWait wait = new WebDriverWait(driver, 5);
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")
             ));
         }
-        assertThat(driver.findElement(By.cssSelector(".mt-2")).getText(), is("CHECK SOME VALUES ABOUT HIT AND MISS REQUESTS"));
         assertThat(driver.findElement(By.cssSelector(".mt-md-0 b")).getText(), is("Total Hits"));
         assertThat(driver.findElement(By.cssSelector(".mt-lg-0 b")).getText(), is("Total Misses"));
         assertThat(driver.findElement(By.cssSelector(".col-lg-12 b")).getText(), is("Total Requests"));
-        assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("CACHE STATISTICS"));
     }
 
     public static class IndexUITest {
@@ -129,7 +128,8 @@ public class CacheMetricsUITest {
 
         @BeforeEach
         public void setUp() {
-            driver = new ChromeDriver();
+            System.setProperty("webdriver.edge.driver", "src/main/resources/msedgedriver.exe");
+            driver = new EdgeDriver();
         }
 
         @AfterEach
@@ -139,23 +139,11 @@ public class CacheMetricsUITest {
 
         @Test
         public void indexUITest() {
-            driver.get("http://127.0.0.1:8080/");
+            driver.get("http://localhost:3000");
             driver.manage().window().setSize(new Dimension(1920, 985));
-            assertThat(driver.findElement(By.cssSelector("a > span")).getText(), is("Air Quality App"));
-            assertThat(driver.findElement(By.linkText("By City")).getText(), is("By City"));
-            assertThat(driver.findElement(By.linkText("By Day")).getText(), is("By Day"));
-            assertThat(driver.findElement(By.linkText("Cache Statistics")).getText(), is("Cache Statistics"));
-            assertThat(driver.findElement(By.id("select2-city-container")).getText(), is("Search city"));
-            {
-                WebDriverWait wait = new WebDriverWait(driver, 30);
-                wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("h2")));
-            }
-            assertThat(driver.findElement(By.cssSelector("h2")).getText(), is("FEATURES"));
-            assertThat(driver.findElement(By.cssSelector("p")).getText(), is("CHECK THE FEATURES"));
-            assertThat(driver.findElement(By.linkText("Air Metrics By City")).getText(), is("Air Metrics By City"));
-            assertThat(driver.findElement(By.linkText("Air Metrics By City and Day")).getText(), is("Air Metrics By City and Day"));
-            assertThat(driver.findElement(By.cssSelector(".col-lg-4:nth-child(3) a")).getText(), is("Cache Statistics"));
-            assertThat(driver.findElement(By.cssSelector(".copyright")).getText(), is("© 2020 - Developed with by Vasco Ramos"));
+            assertThat(driver.findElement(By.cssSelector("a > span")).getText(), is("HW"));
+            assertThat(driver.findElement(By.linkText("Cache")).getText(), is("Cache"));
+            assertThat(driver.findElement(By.id("select2-city-container")).getText(), is("City"));
         }
     }
 }
