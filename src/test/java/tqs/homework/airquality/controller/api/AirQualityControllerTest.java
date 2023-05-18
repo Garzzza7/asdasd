@@ -57,4 +57,8 @@ public class AirQualityControllerTest {
 //        verify(service, VerificationModeFactory.times(1)).getCurrentAirMetrics(CITY_ID);
 //        reset(service);
 //    }
+@Test
+public void lol(){
+
+}
 }

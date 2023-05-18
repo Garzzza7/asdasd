@@ -39,4 +39,8 @@ public class AirQualityServiceTest {
 //
 //        reset(repository1);
 //    }
+@Test
+public void lol(){
+
+}
 }

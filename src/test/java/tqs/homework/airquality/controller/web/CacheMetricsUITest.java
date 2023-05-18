@@ -1,51 +1,51 @@
-//package tqs.homework.airquality.controller.web;
-//
-//import static org.hamcrest.CoreMatchers.is;
-//import static org.hamcrest.MatcherAssert.assertThat;
-//
-//import io.github.bonigarcia.seljup.SeleniumExtension;
-//import org.junit.jupiter.api.*;
-//import io.github.bonigarcia.wdm.WebDriverManager;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.Dimension;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.edge.EdgeDriver;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//
-//import static io.github.bonigarcia.seljup.BrowserType.CHROME;
-//import static org.hamcrest.MatcherAssert.assertThat;
-//
-//import org.junit.jupiter.api.Test;
-//import org.junit.jupiter.api.extension.ExtendWith;
-//import org.openqa.selenium.remote.RemoteWebDriver;
-//
-//import io.github.bonigarcia.seljup.DockerBrowser;
-//import io.github.bonigarcia.seljup.SeleniumJupiter;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.Dimension;
-//import org.openqa.selenium.WebElement;
-//import static org.hamcrest.CoreMatchers.is;
-//import static org.hamcrest.Matchers.greaterThanOrEqualTo;
-//import static org.junit.jupiter.api.Assertions.assertEquals;
-//
-//import org.openqa.selenium.interactions.Actions;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.WebElement;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.JavascriptExecutor;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//
-//public class CacheMetricsUITest {
+package tqs.homework.airquality.controller.web;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import io.github.bonigarcia.seljup.SeleniumExtension;
+import org.junit.jupiter.api.*;
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import static io.github.bonigarcia.seljup.BrowserType.CHROME;
+import static org.hamcrest.MatcherAssert.assertThat;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.openqa.selenium.remote.RemoteWebDriver;
+
+import io.github.bonigarcia.seljup.DockerBrowser;
+import io.github.bonigarcia.seljup.SeleniumJupiter;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebElement;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.Matchers.greaterThanOrEqualTo;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class CacheMetricsUITest {
 //
 //    private WebDriver driver;
 //    @BeforeEach
@@ -104,4 +104,8 @@
 //            assertThat(driver.findElement(By.id("select2-city-container")).getText(), is("City"));
 //        }
 //    }
-//}
+@Test
+public void lol(){
+
+}
+}

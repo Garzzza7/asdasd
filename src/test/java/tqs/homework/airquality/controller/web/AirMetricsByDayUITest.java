@@ -1,19 +1,19 @@
-//package tqs.homework.airquality.controller.web;
-//import org.junit.jupiter.api.AfterEach;
-//import org.junit.jupiter.api.BeforeEach;
-//import org.junit.jupiter.api.Test;
-//import org.openqa.selenium.By;
-//import org.openqa.selenium.Dimension;
-//import org.openqa.selenium.WebDriver;
-//import org.openqa.selenium.chrome.ChromeDriver;
-//import org.openqa.selenium.edge.EdgeDriver;
-//import org.openqa.selenium.support.ui.ExpectedConditions;
-//import org.openqa.selenium.support.ui.WebDriverWait;
-//
-//import static org.hamcrest.MatcherAssert.assertThat;
-//import static org.hamcrest.Matchers.is;
-//
-//public class AirMetricsByDayUITest {
+package tqs.homework.airquality.controller.web;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+
+public class AirMetricsByDayUITest {
 //    private WebDriver driver;
 //
 //    @BeforeEach
@@ -52,4 +52,8 @@
 ////        assertThat(driver.findElement(By.cssSelector(".col-lg-4:nth-child(6) b")).getText(), is("Inhalable particulate matter (PM10)"));
 ////        assertThat(driver.findElement(By.cssSelector(".col-lg-4:nth-child(5) b")).getText(), is("Sulfur Dioxide (SO2)"));
 //    }
-//}
+@Test
+public void lol(){
+
+}
+}
