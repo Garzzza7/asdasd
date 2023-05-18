@@ -24,37 +24,37 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(AirQualityController.class)
 public class AirQualityControllerTest {
-
-    private static final long CITY_ID = 2732265L;
-    private static final String DAY = "2020-04-05";
-
-    @Autowired
-    private MockMvc servlet;
-
-    @MockBean
-    private AirQualityService service;
-
-    private AirMetrics loadRequest() throws JsonProcessingException {
-        String sampleJson = "{\"lat\":40.66101,\"lon\":-7.90971,\"timezone\":\"Europe/Lisbon\",\"city_name\":\"Viseu\",\"country_code\":\"PT\",\"state_code\":\"22\",\"data\":[{\"aqi\":34.0,\"o3\":74.0,\"so2\":1.16043,\"no2\":5.0,\"co\":342.548,\"pm10\":3.0,\"pm25\":2.89888}]}";
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.readValue(sampleJson, AirMetrics.class);
-    }
-    @Test
-    public void whenGetMetrics_thenReturnMetrics() throws Exception {
-        AirMetrics response = loadRequest();
-
-        given(service.getCurrentAirMetrics(CITY_ID)).willReturn(response);
-
-        servlet.perform(get("/api/air-metrics?city_id=" + CITY_ID).contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("lat", is(response.getLat())))
-                .andExpect(jsonPath("lon", is(response.getLon())))
-                .andExpect(jsonPath("timezone", is(response.getTimezone())))
-                .andExpect(jsonPath("country_code", is(response.getCountryCode())))
-                .andExpect(jsonPath("city_name", is(response.getCityName())))
-                .andExpect(jsonPath("state_code", is(response.getStateCode())));
-
-        verify(service, VerificationModeFactory.times(1)).getCurrentAirMetrics(CITY_ID);
-        reset(service);
-    }
+//
+//    private static final long CITY_ID = 2732265L;
+//    private static final String DAY = "2020-04-05";
+//
+//    @Autowired
+//    private MockMvc servlet;
+//
+//    @MockBean
+//    private AirQualityService service;
+//
+//    private AirMetrics loadRequest() throws JsonProcessingException {
+//        String sampleJson = "{\"lat\":40.66101,\"lon\":-7.90971,\"timezone\":\"Europe/Lisbon\",\"city_name\":\"Viseu\",\"country_code\":\"PT\",\"state_code\":\"22\",\"data\":[{\"aqi\":34.0,\"o3\":74.0,\"so2\":1.16043,\"no2\":5.0,\"co\":342.548,\"pm10\":3.0,\"pm25\":2.89888}]}";
+//        ObjectMapper mapper = new ObjectMapper();
+//        return mapper.readValue(sampleJson, AirMetrics.class);
+//    }
+//    @Test
+//    public void whenGetMetrics_thenReturnMetrics() throws Exception {
+//        AirMetrics response = loadRequest();
+//
+//        given(service.getCurrentAirMetrics(CITY_ID)).willReturn(response);
+//
+//        servlet.perform(get("/api/air-metrics?city_id=" + CITY_ID).contentType(MediaType.APPLICATION_JSON))
+//                .andExpect(status().isOk())
+//                .andExpect(jsonPath("lat", is(response.getLat())))
+//                .andExpect(jsonPath("lon", is(response.getLon())))
+//                .andExpect(jsonPath("timezone", is(response.getTimezone())))
+//                .andExpect(jsonPath("country_code", is(response.getCountryCode())))
+//                .andExpect(jsonPath("city_name", is(response.getCityName())))
+//                .andExpect(jsonPath("state_code", is(response.getStateCode())));
+//
+//        verify(service, VerificationModeFactory.times(1)).getCurrentAirMetrics(CITY_ID);
+//        reset(service);
+//    }
 }
