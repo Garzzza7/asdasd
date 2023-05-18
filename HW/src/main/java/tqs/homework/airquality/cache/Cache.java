@@ -13,6 +13,18 @@ public class Cache {
     private int numberOfMisses;
 
     private String dziekan = "chuj";
+    private String dziekan = "chuj";
+
+    private String dziekan = "chuj";
+
+    private String dziekan = "chuj";
+
+    private String dziekan = "chuj";
+
+    private String dziekan = "chuj";
+    private String dziekan = "chuj";
+
+
     @JsonIgnore
     private Map<String, AirMetrics> requests;
 
