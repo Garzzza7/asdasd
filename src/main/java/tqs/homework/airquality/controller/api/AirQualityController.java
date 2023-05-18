@@ -13,17 +13,17 @@ import tqs.homework.airquality.service.AirQualityService;
 @RequestMapping("/api")
 public class AirQualityController {
 
-    @Autowired
-    private AirQualityService airQualityService;
-
-    @GetMapping("/air-metrics")
-    public AirMetrics getAirMetrics(@RequestParam(value = "city_id") Long cityId) {
-            return airQualityService.getCurrentAirMetrics(cityId);
-        }
-
-
-    @GetMapping("cache-statistics")
-    public Cache getCacheStatistics() {
-        return airQualityService.getCacheStatistics();
-    }
+//    @Autowired
+//    private AirQualityService airQualityService;
+//
+//    @GetMapping("/air-metrics")
+//    public AirMetrics getAirMetrics(@RequestParam(value = "city_id") Long cityId) {
+//            return airQualityService.getCurrentAirMetrics(cityId);
+//        }
+//
+//
+//    @GetMapping("cache-statistics")
+//    public Cache getCacheStatistics() {
+//        return airQualityService.getCacheStatistics();
+//    }
 }
