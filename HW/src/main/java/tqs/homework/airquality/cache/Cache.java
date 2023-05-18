@@ -12,6 +12,7 @@ public class Cache {
     private int numberOfHits;
     private int numberOfMisses;
 
+    private String dziekan = "chuj";
     @JsonIgnore
     private Map<String, AirMetrics> requests;
 
