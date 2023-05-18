@@ -16,6 +16,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class AirQualityServiceTest {
+    //chuj
 //
 //    private static final long CITY_ID = 2732265L;
 //    private static final String DAY = "2020-04-05";
