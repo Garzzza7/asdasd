@@ -13,16 +13,16 @@ public class Cache {
     private int numberOfMisses;
 
     private String dziekan = "chuj";
-    private String dziekan = "chuj";
+    private String dziekan1 = "chuj";
 
-    private String dziekan = "chuj";
+    private String dziekan2 = "chuj";
 
-    private String dziekan = "chuj";
+    private String dziekan3 = "chuj";
 
-    private String dziekan = "chuj";
+    private String dziekan5 = "chuj";
 
-    private String dziekan = "chuj";
-    private String dziekan = "chuj";
+    private String dziekan6 = "chuj";
+    private String dziekan9 = "chuj";
 
 
     @JsonIgnore
