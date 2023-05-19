@@ -25,6 +25,9 @@ public class Cache {
     private String dziekan9 = "chuj";
 
 
+    public String jebac = "jebac cie tqs";
+
+
     @JsonIgnore
     private Map<String, AirMetrics> requests;
 
