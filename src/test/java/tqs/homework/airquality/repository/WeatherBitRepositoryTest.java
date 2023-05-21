@@ -13,16 +13,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(MockitoExtension.class)
 public class WeatherBitRepositoryTest {
 
-//    private static  final long CITY_ID = 2732265L;
-//
-//    @InjectMocks
-//    private WeatherBitRepository repository;
-//
+    private static  final long CITY_ID = 2732265L;
+
+    @InjectMocks
+    private WeatherBitRepository repository;
+
 //    @Test
 //    public void whenGetAirMetrics_thenReturnCorrectMetrics() {
 //        assertThat(repository.getMetrics(CITY_ID)).isInstanceOf(AirMetrics.class);
 //    }
-//
+
 //    @Test
 //    public void whenGetAirMetricsInvalidId_thenReturnCorrectMetrics() {
 //        assertThat(repository.getMetrics(1L)).isNull();
@@ -31,4 +31,8 @@ public class WeatherBitRepositoryTest {
 public void lol(){
 
 }
+    @Test
+    public void jebac(){
+
+    }
 }
