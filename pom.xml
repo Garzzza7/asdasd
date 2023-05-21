@@ -14,11 +14,15 @@
     <name>airquality</name>
     <description>Homework that I hope works</description>
 
+
     <properties>
         <java.version>11</java.version>
         <junit.jupiter.version>5.6.0</junit.jupiter.version>
        <!-- <selenium.version>4.8.3</selenium.version> -->
+        <sonar.organization>garzzza7</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
+
 
     <dependencies>
         <dependency>
