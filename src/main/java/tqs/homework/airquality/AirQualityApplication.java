@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class AirQualityApplication {
     String string = "asdasdasd";
+    String string1 = "PIERDOLE TO LMAOOOOOOOO";
     public static void main(String[] args) {
         SpringApplication.run(AirQualityApplication.class, args);
     }

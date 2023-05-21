@@ -72,7 +72,7 @@
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>selenium-jupiter</artifactId>
-            <version>${selenium-jupiter.version}</version>
+<!--            <version>${selenium-jupiter.version}</version>-->
             <scope>test</scope>
         </dependency>
 
