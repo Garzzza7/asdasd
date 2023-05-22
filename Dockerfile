@@ -18,3 +18,4 @@ EXPOSE 3000
 ADD target/weather_jar.jar weather_jar.jar
 ENTRYPOINT ["java", "-jar", "/weather_jar.jar"]
 #chuj
+#pixda
