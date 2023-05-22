@@ -3,6 +3,7 @@ package tqs.homework.airquality;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+//Would you rather..
 @SpringBootApplication
 public class AirQualityApplication {
     String string = "asdasdasd";
